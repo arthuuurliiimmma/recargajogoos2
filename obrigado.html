@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagamento aprovado no Centro de Recarga.">
+    <title>Pagamento aprovado</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260507-3">
+    <link rel="stylesheet" href="assets/css/checkout.css?v=20260507-3">
+  </head>
+  <body class="checkout-page thank-you-page">
+    <div class="site-shell checkout-shell">
+      <header class="site-header">
+        <div class="header-inner">
+          <a class="brand" href="/" aria-label="Garena - Canal Oficial de Recarga">
+            <span class="garena-mark" aria-hidden="true">
+              <img src="assets/img/garena-logo.svg" alt="">
+              <span>Garena</span>
+            </span>
+            <span class="brand-divider" aria-hidden="true"></span>
+            <span class="brand-copy">Canal Oficial de Recarga</span>
+          </a>
+          <button class="avatar-button" type="button" aria-label="Conta">
+            <span class="avatar-wrap">
+              <img src="assets/img/icon-freefire.png" alt="User avatar">
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <main class="checkout-main thank-you-main">
+        <section class="thank-you-card" aria-labelledby="thankYouTitle">
+          <div class="thank-you-check" aria-hidden="true"></div>
+          <h1 id="thankYouTitle">Pagamento aprovado</h1>
+          <p>Seu pedido foi confirmado e está sendo processado.</p>
+          <div class="thank-you-summary" id="thankYouSummary"></div>
+          <a class="checkout-button thank-you-button" href="/">Voltar para o início</a>
+        </section>
+      </main>
+
+      <footer class="checkout-footer">
+        <div class="checkout-footer-inner">
+          <p>© 2026 Garena Online. Todos os direitos reservados.</p>
+          <nav aria-label="Links do rodapé">
+            <a href="#">FAQ</a>
+            <span aria-hidden="true"></span>
+            <a href="#">Termos e Condições</a>
+            <span aria-hidden="true"></span>
+            <a href="#">Política de Privacidade</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        if (window.location.pathname !== "/obrigado" && window.history && window.history.replaceState) {
+          window.history.replaceState(null, document.title, "/obrigado");
+        }
+
+        var target = document.getElementById("thankYouSummary");
+        if (!target) return;
+        try {
+          var summary = JSON.parse(localStorage.getItem("lastPaymentSummary") || "{}");
+          if (!summary.payment_id) return;
+          target.innerHTML =
+            "<p><span>Jogo</span><strong>" + escapeHtml(summary.game_name || "-") + "</strong></p>" +
+            "<p><span>Produto</span><strong>" + escapeHtml(summary.product_name || "-") + "</strong></p>" +
+            "<p><span>ID do pagamento</span><strong>" + escapeHtml(summary.payment_id || "-") + "</strong></p>";
+        } catch (error) {
+          target.innerHTML = "";
+        }
+
+        function escapeHtml(value) {
+          return String(value).replace(/[&<>"']/g, function (char) {
+            return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char];
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

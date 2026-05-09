@@ -1,0 +1,18 @@
+DirectoryIndex index.html
+Options -MultiViews -Indexes
+
+RewriteEngine On
+
+# Mantem a home com URL limpa na Hostinger:
+# https://recargasjogo.sbs/ em vez de https://recargasjogo.sbs/index.html
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ /? [R=301,L]
+
+RewriteRule ^checkout/$ /checkout [R=301,L]
+RewriteRule ^obrigado/$ /obrigado [R=301,L]
+
+RewriteRule ^checkout$ checkout.html [L]
+RewriteRule ^obrigado$ obrigado.html [L]
+
+Deny from all
+Require all denied

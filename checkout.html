@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checkout do Centro de Recarga Free Fire.">
+    <title>Centro de Recarga Free Fire</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260508-2">
+    <link rel="stylesheet" href="assets/css/checkout.css?v=20260508-2">
+  </head>
+  <body class="checkout-page">
+    <div class="site-shell checkout-shell">
+      <header class="site-header">
+        <div class="header-inner">
+          <a class="brand" href="/" aria-label="Garena - Canal Oficial de Recarga">
+            <span class="garena-mark" aria-hidden="true">
+              <img src="assets/img/garena-logo.svg" alt="">
+              <span>Garena</span>
+            </span>
+            <span class="brand-divider" aria-hidden="true"></span>
+            <span class="brand-copy">Canal Oficial de Recarga</span>
+          </a>
+          <button class="avatar-button" type="button" aria-label="Conta">
+            <span class="avatar-wrap">
+              <img id="checkoutHeaderAvatar" src="assets/img/icon-freefire.png" alt="User avatar">
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <main class="checkout-main">
+        <article class="checkout-card" id="checkoutCard">
+          <section class="checkout-game-block" id="checkoutGameBlock" aria-label="Free Fire">
+            <div class="checkout-banner">
+              <img id="checkoutBannerImg" src="assets/img/freefire-banner.jpg" alt="Free Fire Banner">
+              <a class="checkout-back" id="checkoutBackLink" href="/" aria-label="Voltar">
+                <span aria-hidden="true">‹</span>
+                Voltar
+              </a>
+            </div>
+            <div class="checkout-game-head">
+              <span class="checkout-game-icon">
+                <img id="checkoutGameIconImg" src="assets/img/icon-freefire.png" alt="Free Fire">
+              </span>
+              <h1 id="checkoutGameTitle">Free Fire</h1>
+            </div>
+          </section>
+
+          <section class="checkout-summary-block" aria-label="Resumo do pedido">
+            <div class="summary-row summary-total-row">
+              <span>Total</span>
+              <strong class="diamond-value diamond-value-large" id="summaryTotal">47.040</strong>
+            </div>
+
+            <div class="summary-breakdown" id="summaryBreakdown">
+              <div class="summary-row summary-small-row">
+                <span>Preço Original</span>
+                <strong class="diamond-value" id="summaryOriginal">22.400</strong>
+              </div>
+              <div class="summary-row summary-small-row">
+                <span>+ Bônus Geral</span>
+                <strong class="diamond-value" id="summaryBonus">24.640</strong>
+              </div>
+            </div>
+
+            <p class="summary-note">
+              Os diamantes, são válidos apenas para a região do Brasil e serão creditados diretamente na conta de jogo.
+            </p>
+
+            <div class="summary-row summary-detail-row">
+              <span>Preço</span>
+              <strong id="summaryPrice">R$ 209,99</strong>
+            </div>
+            <div class="summary-row summary-detail-row">
+              <span>Método de pagamento</span>
+              <strong id="summaryPayment">Pix</strong>
+            </div>
+            <div class="summary-row summary-detail-row" id="summaryPlayerRow">
+              <span>Nome do Jogador</span>
+              <strong id="summaryPlayer">Não encontrado</strong>
+            </div>
+          </section>
+
+          <section class="checkout-form-panel" id="checkoutFormPanel" aria-label="Dados para pagamento">
+            <form class="checkout-form" id="checkoutForm" novalidate>
+              <div class="checkout-field checkout-promo-field">
+                <label for="promoCode">Código promocional</label>
+                <div class="promo-input-row">
+                  <input id="promoCode" name="promoCode" type="text" autocomplete="off" placeholder="Código Promocional, Exemplo: PROMO1234">
+                  <button class="checkout-button promo-apply" id="promoApply" type="button">Aplicar</button>
+                </div>
+                <p class="checkout-error" id="promoError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="customerName">Nome Completo</label>
+                <input id="customerName" name="name" type="text" autocomplete="name" placeholder="Nome Completo">
+                <p class="checkout-error" id="nameError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="customerEmail">E-mail</label>
+                <input id="customerEmail" name="email" type="email" autocomplete="email" placeholder="E-mail">
+                <p class="checkout-error" id="emailError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="customerDocument">CPF</label>
+                <input id="customerDocument" name="document" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00">
+                <p class="checkout-error" id="documentError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="customerPhone">Número de telefone</label>
+                <input id="customerPhone" name="phone" type="text" inputmode="numeric" autocomplete="tel" placeholder="(00) 0 0000-0000">
+                <p class="checkout-error" id="phoneError" role="alert"></p>
+              </div>
+
+              <p class="checkout-legal">
+                Ao clicar em “Prosseguir para Pagamento”, atesto que li e concordo com os
+                <a href="#" target="_blank" rel="noopener">termos de uso</a>
+                e com a
+                <a href="#" target="_blank" rel="noopener">política de privacidade</a>
+                do sistema Recarga Jogo.
+              </p>
+
+              <button class="checkout-button checkout-submit" id="checkoutSubmit" type="submit" disabled>
+                Prosseguir para pagamento
+              </button>
+            </form>
+          </section>
+
+          <section class="checkout-form-panel card-form-panel is-hidden" id="cardFormPanel" aria-label="Dados do cartão">
+            <form class="checkout-form card-checkout-form" id="cardCheckoutForm" novalidate>
+              <div class="checkout-field">
+                <label for="cardNumber">Número do cartão</label>
+                <div class="card-input-shell">
+                  <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000">
+                  <span class="card-input-icon" aria-hidden="true"></span>
+                </div>
+                <p class="checkout-error" id="cardNumberError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field-grid">
+                <div class="checkout-field">
+                  <label for="cardDueDate">Validade</label>
+                  <input id="cardDueDate" name="cardDueDate" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA">
+                  <p class="checkout-error" id="cardDueDateError" role="alert"></p>
+                </div>
+
+                <div class="checkout-field">
+                  <label class="label-with-info" for="cardCVV">
+                    Código de segurança
+                    <span class="info-dot" aria-hidden="true">i</span>
+                  </label>
+                  <input id="cardCVV" name="cardCVV" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="CVV">
+                  <p class="checkout-error" id="cardCvvError" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="checkout-field">
+                <label for="cardInstallments">Parcelas</label>
+                <div class="installment-select-shell">
+                  <button class="installment-trigger" id="installmentButton" type="button" tabindex="-1">
+                    <span id="installmentButtonText">Selecione o número de parcelas</span>
+                    <span class="select-arrow" aria-hidden="true"></span>
+                  </button>
+                  <select class="installment-native" id="cardInstallments" name="installments" aria-label="Parcelas"></select>
+                </div>
+                <p class="checkout-error" id="cardInstallmentsError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="cardholderName">Nome Completo</label>
+                <input id="cardholderName" name="name" type="text" autocomplete="cc-name" placeholder="Nome Completo">
+                <p class="checkout-error" id="cardNameError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field">
+                <label for="cardEmail">E-mail</label>
+                <input id="cardEmail" name="email" type="email" autocomplete="email" placeholder="E-mail">
+                <p class="checkout-error" id="cardEmailError" role="alert"></p>
+              </div>
+
+              <div class="checkout-field-grid">
+                <div class="checkout-field">
+                  <label for="cardCpf">CPF</label>
+                  <input id="cardCpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00">
+                  <p class="checkout-error" id="cardCpfError" role="alert"></p>
+                </div>
+
+                <div class="checkout-field">
+                  <label for="cardDob">Data de nascimento</label>
+                  <input id="cardDob" name="dob" type="text" inputmode="numeric" autocomplete="bday" placeholder="DD/MM/AAAA">
+                  <p class="checkout-error" id="cardDobError" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="checkout-field">
+                <label for="cardPhone">Número de telefone</label>
+                <input id="cardPhone" name="phone" type="text" inputmode="numeric" autocomplete="tel" placeholder="(00) 0 0000-0000">
+                <p class="checkout-error" id="cardPhoneError" role="alert"></p>
+              </div>
+
+              <p class="checkout-legal">
+                Ao clicar em “Prosseguir para Pagamento”, atesto que li e concordo com os
+                <a href="#" target="_blank" rel="noopener">termos de uso</a>
+                e com a
+                <a href="#" target="_blank" rel="noopener">política de privacidade</a>
+                do PagSeguro.
+              </p>
+
+              <button class="checkout-button checkout-submit card-submit" id="cardSubmit" type="submit">
+                Prosseguir para pagamento
+              </button>
+            </form>
+          </section>
+
+          <section class="pix-panel is-hidden" id="pixPanel" aria-label="Pagamento via Pix">
+            <h2 id="pixPanelTitle">Pague com Pix</h2>
+            <p class="pix-status-text" id="pixStatusText">Aguardando pagamento</p>
+            <div class="fake-qr" id="fakeQr" aria-label="QR Code Pix"></div>
+            <p class="pix-document" id="pixPaymentId"></p>
+            <p class="pix-expiration" id="pixExpiration"></p>
+            <div class="pix-code" id="pixCode"></div>
+            <button class="checkout-button pix-copy" id="pixCopy" type="button">Copiar Código</button>
+            <p class="checkout-error payment-error" id="paymentError" role="alert"></p>
+            <div class="pix-instructions">
+              <p>Para realizar o pagamento siga os passos abaixo:</p>
+              <p>1) Abra o app ou o site da sua instituição financeira e seleciona o Pix</p>
+              <p>2) Utilize as informações acima para realizar o pagamento</p>
+              <p>3) Revise as informações e pronto!</p>
+              <p>Seu pedido está sendo processado pela sistema Recarga Jogo</p>
+              <p>Você receberá seus itens após recebermos a confirmação do pagamento. Isso ocorre geralmente em alguns minutos após a realização do pagamento na sua instituição financeira.</p>
+            </div>
+          </section>
+        </article>
+
+        <section class="card-status-page is-hidden" id="cardStatusPage" aria-label="Transação em análise">
+          <div class="card-status-hero">
+            <div class="status-clock" aria-hidden="true"></div>
+            <h2>Transação em análise</h2>
+            <p>ID de transação</p>
+            <strong id="cardTransactionId">1778180971385404744</strong>
+          </div>
+
+          <div class="card-status-copy">
+            <p>Atenção:</p>
+            <p>Seu pedido está sendo processado pelo nosso parceiro PagSeguro.</p>
+            <p>Você receberá seus diamantes após a operadora do seu cartão de crédito confirmar o pagamento para gente, isso ocorre geralmente em alguns minutos depois do processamento pela operadora.</p>
+            <p>Em caso de dúvidas, entre em contato através do link</p>
+            <p>https://customer.boacompra.com/pt-br</p>
+            <button class="checkout-button card-history-button" id="cardHistoryButton" type="button">Histórico de transações</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="checkout-footer">
+        <div class="checkout-footer-inner">
+          <p>© 2026 Garena Online. Todos os direitos reservados.</p>
+          <nav aria-label="Links do rodapé">
+            <a href="#">FAQ</a>
+            <span aria-hidden="true"></span>
+            <a href="#">Termos e Condições</a>
+            <span aria-hidden="true"></span>
+            <a href="#">Política de Privacidade</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <div class="checkout-modal-backdrop is-hidden" id="checkoutModalBackdrop"></div>
+    <section class="upsell-modal is-hidden" id="upsellModal" role="dialog" aria-modal="true" aria-labelledby="upsellTitle">
+      <button class="upsell-close" id="upsellClose" type="button" aria-label="Fechar">×</button>
+      <header class="upsell-header">
+        <h2 id="upsellTitle">Promoção Especial</h2>
+        <p>Turbine sua conta com estas ofertas exclusivas!</p>
+      </header>
+
+      <div class="upsell-list" id="upsellList">
+        <button class="upsell-option" type="button" data-upsell-id="sombra-roxa">
+          <img src="assets/img/upsell-sombra-roxa.png" alt="Sombra Roxa">
+          <span class="upsell-copy">
+            <strong>Sombra Roxa</strong>
+            <span><s>R$ 99,99</s> <b>R$ 9,99</b></span>
+          </span>
+          <span class="upsell-check" aria-hidden="true"></span>
+        </button>
+
+        <button class="upsell-option" type="button" data-upsell-id="barba-velho">
+          <img src="assets/img/upsell-barba-velho.png" alt="Barba do Velho">
+          <span class="upsell-copy">
+            <strong>Barba do Velho</strong>
+            <span><s>R$ 99,99</s> <b>R$ 12,99</b></span>
+          </span>
+          <span class="upsell-check" aria-hidden="true"></span>
+        </button>
+
+        <button class="upsell-option" type="button" data-upsell-id="pacote-coelhao">
+          <img src="assets/img/upsell-pacote-coelhao.png" alt="Pacote Coelhão">
+          <span class="upsell-copy">
+            <strong>Pacote Coelhão</strong>
+            <span><s>R$ 49,99</s> <b>R$ 9,99</b></span>
+          </span>
+          <span class="upsell-check" aria-hidden="true"></span>
+        </button>
+
+        <button class="upsell-option" type="button" data-upsell-id="calca-angelical">
+          <img src="assets/img/upsell-calca-angelical.png" alt="Calça Angelical Azul">
+          <span class="upsell-copy">
+            <strong>Calça Angelical Azul</strong>
+            <span><s>R$ 149,90</s> <b>R$ 24,80</b></span>
+          </span>
+          <span class="upsell-check" aria-hidden="true"></span>
+        </button>
+
+        <button class="upsell-option" type="button" data-upsell-id="caos-arcano">
+          <img src="assets/img/upsell-caos-arcano.png" alt="Caos Arcano">
+          <span class="upsell-copy">
+            <strong>Caos Arcano</strong>
+            <span><s>R$ 75,90</s> <b>R$ 17,99</b></span>
+          </span>
+          <span class="upsell-check" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <footer class="upsell-footer">
+        <div class="upsell-total">
+          <span>Total:</span>
+          <strong id="upsellTotal">R$ 209,99</strong>
+        </div>
+        <button class="checkout-button upsell-finish" id="upsellFinish" type="button">Finalizar Pedido</button>
+      </footer>
+    </section>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+    <script src="assets/js/qrcode.min.js?v=20260508-2"></script>
+    <script src="assets/js/checkout.js?v=20260508-2"></script>
+  </body>
+</html>
